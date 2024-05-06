@@ -2,31 +2,33 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String[] arr = new String[3];
-        int[] secAcc = new int[3];
-        int a,b,c,d;
-        a = 0;
-        b = 0;
-        c = 0;
-        d = 0;
-        for(int i = 0; i < 3; i++){ // 012
-            arr[i] = sc.next();
-            for(int j = i; j < i+1; j++){ // 012
-                secAcc[j] = sc.nextInt();
-                if(arr[i].equals("Y") && secAcc[j] >= 37){
-                    a++;
-                }else if(arr[i].equals("N") && secAcc[j] >= 37){
-                    b++;
-                }else if(arr[i].equals("Y") && secAcc[j] < 37){
-                    c++;
-                }else if(arr[i].equals("N") && secAcc[j] < 37){
-                    d++;
-                }
-            }
+
+        int[] count = new int[5];
+        int num = 0;
+        int celcius;
+        char symptom;
+
+        for(int i = 0; i < 3; i++){ 
+            symptom = sc.next().charAt(0);
+            celcius = sc.nextInt();
+
+            if(celcius >= 37 && symptom == 'Y')
+                num = 1;
+            else if(celcius >= 37)
+                num = 2;
+            else if(symptom == 'Y')
+                num = 3;
+            else   
+                num = 4;
+            count[num]++;
         }
-        System.out.print(a+" "+b+" "+c+" "+d);
-        if(a >= 2){
-            System.out.print(" E");
+
+        for(int i = 1; i <= 4; i++){
+            System.out.print(count[i]+" ");
         }
+        if(count[1] >= 2){
+            System.out.print("E");
+        }
+
     }
 }
