@@ -6,26 +6,19 @@ public class Main {
 
         int a = sc.nextInt();
         int b = sc.nextInt();
-        int[] arr = new int[10];
-        int cntArr[] = new int[10];
+        int cntArr[] = new int[b];
 
-        for(int i = 0; i < arr.length; i++){
-            arr[i] += a % b; 
+        while(a > 1){
+            int cnt = a % b; 
             a /= b; 
-            if(a <= 1) break;
+            cntArr[cnt]++;
         }
 
-        int cnt = 0;
-        for(int i = 0; i < 10; i++){ 
-            for(int j = 0; j < arr.length; j++){
-                if(arr[j] == i){
-                    cnt++;
-                }else{
-                    cnt = 0;
-                    continue;
-                }
-                System.out.print(cnt);
-            }
+        int sum = 0;
+        for (int count : cntArr) {
+            sum += count * count; 
         }
+
+        System.out.print(sum);
     }
 }
