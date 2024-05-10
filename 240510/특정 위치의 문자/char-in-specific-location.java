@@ -10,10 +10,10 @@ public class Main {
         for(int i = 0; i < 6; i++){
             if(arr[i] == text){
                 idx = i;
-                System.out.print(idx);
+                
             }
         }
-
+        System.out.print(idx);
         if(idx == -1){
             System.out.print("None");
         }
