@@ -15,11 +15,15 @@ public class Main {
             arr[i] = sc.nextInt();
             if(arr[i] < minValue){
                 minValue = arr[i];
-                cnt++;
             }
         }      
 
+        for(int i = 0; i < N; i++){
+            if(arr[i] == minValue){
+                cnt++;
+            }
+        }
+
         System.out.print(minValue + " " + cnt);
-        
     }
 }
