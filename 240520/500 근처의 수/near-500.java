@@ -9,7 +9,7 @@ public class Main {
             arr[i] = sc.nextInt();
         }
 
-        int maxNum = arr[0];
+        int maxNum = Integer.MIN_VALUE;
         int minNum = Integer.MAX_VALUE;
         for(int i = 0; i < 10; i++){
             if(arr[i] < 500 && arr[i] > maxNum){
